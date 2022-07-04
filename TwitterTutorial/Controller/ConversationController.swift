@@ -15,11 +15,15 @@ class ConversationController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-
+        configuerUI()
     }
 
     // MARK: - Helpers
+
+    func configuerUI() {
+        view.backgroundColor = .white
+        navigationItem.title = "Messages"
+    }
 
 }
 

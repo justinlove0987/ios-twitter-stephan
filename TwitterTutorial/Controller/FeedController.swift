@@ -15,10 +15,18 @@ class FeedController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        configuerUI()
 
     }
 
     // MARK: - Helpers
+
+    func configuerUI() {
+        view.backgroundColor = .white
+
+        let imageView = UIImageView(image: UIImage(named: "twitter_logo_blue"))
+        imageView.contentMode = .scaleAspectFit
+        navigationItem.titleView = imageView
+    }
 
 }
