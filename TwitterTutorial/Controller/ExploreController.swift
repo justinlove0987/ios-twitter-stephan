@@ -16,7 +16,6 @@ class ExploreController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configuerUI()
-
     }
 
     // MARK: - Helpers

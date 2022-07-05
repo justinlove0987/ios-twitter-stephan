@@ -17,6 +17,7 @@
 		D0631BEA2872E1DF00B241CB /* ExploreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0631BE92872E1DF00B241CB /* ExploreController.swift */; };
 		D0631BEC2872E1EC00B241CB /* NotificationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0631BEB2872E1EC00B241CB /* NotificationsController.swift */; };
 		D0631BEE2872E1FA00B241CB /* ConversationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0631BED2872E1FA00B241CB /* ConversationController.swift */; };
+		D0631BFF28742BD400B241CB /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0631BFE28742BD400B241CB /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		D0631BE92872E1DF00B241CB /* ExploreController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreController.swift; sourceTree = "<group>"; };
 		D0631BEB2872E1EC00B241CB /* NotificationsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsController.swift; sourceTree = "<group>"; };
 		D0631BED2872E1FA00B241CB /* ConversationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationController.swift; sourceTree = "<group>"; };
+		D0631BFE28742BD400B241CB /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +125,7 @@
 		D0631BE22872DEA900B241CB /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				D0631BFE28742BD400B241CB /* Extensions.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -201,6 +204,7 @@
 				D0631BEC2872E1EC00B241CB /* NotificationsController.swift in Sources */,
 				D0631BC92872DDE900B241CB /* AppDelegate.swift in Sources */,
 				D0631BEA2872E1DF00B241CB /* ExploreController.swift in Sources */,
+				D0631BFF28742BD400B241CB /* Extensions.swift in Sources */,
 				D0631BCB2872DDE900B241CB /* SceneDelegate.swift in Sources */,
 				D0631BE62872DFB400B241CB /* MainTabController.swift in Sources */,
 				D0631BEE2872E1FA00B241CB /* ConversationController.swift in Sources */,
