@@ -14,7 +14,7 @@ class ProfileController: UICollectionViewController {
 
     // MARK: - Properties
 
-    private let user: User
+    private var user: User
 
     private var tweets = [Tweet]() {
         didSet { collectionView.reloadData() }
@@ -35,6 +35,8 @@ class ProfileController: UICollectionViewController {
         super.viewDidLoad()
         configureCollectionView()
         fetchTweets()
+        fetchUserStats()
+        checkIfUserIsFollowed()
 
         print("DEBUG: User is \(user.username)")
     }
@@ -50,6 +52,21 @@ class ProfileController: UICollectionViewController {
     func fetchTweets() {
         TweetService.shared.fetchTweets(forUser: user) { tweets in
             self.tweets = tweets
+        }
+    }
+
+    func checkIfUserIsFollowed() {
+        UserService.shared.checkIfUserIsFollowed(uid: user.uid) { isFollowed in
+            self.user.isFollowed = isFollowed
+            self.collectionView.reloadData()
+        }
+    }
+
+    func fetchUserStats() {
+        UserService.shared.fetchUserState(uid: user.uid) { stats in
+            print("foo - \(stats)")
+            self.user.stats = stats
+            self.collectionView.reloadData()
         }
     }
 
@@ -109,6 +126,26 @@ extension ProfileController: UICollectionViewDelegateFlowLayout {
 }
 
 extension ProfileController: ProfileHeaderDelegate {
+    func handleEditProfileFollow(_ header: ProfileHeader) {
+
+        if user.isCurrentUser {
+            print("DEBUG: Show edit profile controller...")
+            return
+        }
+
+        if user.isFollowed {
+            UserService.shared.unFollowUser(uid: user.uid) { err, ref in
+                self.user.isFollowed = false
+                self.collectionView.reloadData()
+            }
+        } else {
+            UserService.shared.followUser(uid: user.uid) { ref, error in
+                self.user.isFollowed = true
+                self.collectionView.reloadData()
+            }
+        }
+    }
+
     func handleDismissal() {
         navigationController?.popViewController(animated: true)
     }
